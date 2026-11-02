@@ -1,8 +1,5 @@
 # RETADSS - REal Time Automatic Data Sorter System (CPE 010, Group 2)
 
-Build and run:
-    g++ -std=c++17 -O2 main.cpp -o retadss
-    ./retadss
 
 Files
 - models.h          Person, Record, Tier

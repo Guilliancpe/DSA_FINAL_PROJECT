@@ -10,6 +10,8 @@
 #include "BST.h"
 #include "GT.h"
 #include "MenuItem.h"
+#include "Graph.h"
+#include "History.h"
 
 const int CUSTOMERS = 1000;   // how many people are created (the array capacity too)
 const int SHOW = 5;           // how many people are printed in detail (1000 lines is too long)
@@ -255,7 +257,12 @@ int main(int argc, char* argv[]) {
     searchAndDisplay(customers, CUSTOMERS, customers[0].total, customers[0].id);                     // first
     searchAndDisplay(customers, CUSTOMERS, customers[mid].total, customers[mid].id);                 // middle
     searchAndDisplay(customers, CUSTOMERS, customers[CUSTOMERS - 1].total, customers[CUSTOMERS - 1].id); // last
-    searchAndDisplay(customers, CUSTOMERS, 9999, 1);                                                 // does not exist
+    searchAndDisplay(customers, CUSTOMERS, 9999, 1);           // does not exist
+
+    std::string movieNames[5] = {"Movie A", "Movie B", "Movie C", "Movie D", "Movie E"};
+    movieGraph<Params> history;
+    history.buildRandom(params, CUSTOMERS, movieNames, 5);
+    browseHistory(history);
 
     // cleanup
     delete[] customers;
